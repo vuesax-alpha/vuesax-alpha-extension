@@ -1,0 +1,95 @@
+{
+  "framework": "vue",
+  "version": "0.20-beta.75",
+  "name": "VUESAX-ALPHA",
+  "contributions": {
+    "html": {
+      "tags": [
+        {
+          "name": "vs-button",
+          "attributes": [
+            {
+              "name": "color",
+              "description": "Change the color of the component and some of its sub components.",
+              "default": "primary",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "type",
+              "description": "Change the style of the component and its states.",
+              "default": "''",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "active",
+              "description": "Determine if the component is active and change its style to that state.",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "upload",
+              "description": "Determine if the component has the upload status active by changing the style and adding the animation.",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "href",
+              "description": "Add an href of an external link to add the functionality by clicking on the component.",
+              "default": "''",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "blank",
+              "description": "as in an html element `a` determines whether a new window is opened or the current one is replaced.",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Determine if the component contains only one icon, by adding this property the component has an equal width and height.",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "circle",
+              "description": "Change the border radius to give a circle style.",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "animate",
+              "description": "Slot To add the element that will be displayed in the animation."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

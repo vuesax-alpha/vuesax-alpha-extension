@@ -1,0 +1,49 @@
+{
+  "name": "vuesax-alpha-extension",
+  "displayName": "vuesax-alpha-extension",
+  "description": "a vscode extension of vuesax-alpha",
+  "version": "0.0.1",
+  "publisher": "vuesax-alpha",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:vue",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {},
+  "scripts": {
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "compile": "tsup src/extension.ts --dts --minify --external=vscode --outDir=out",
+    "watch": "npm run compile -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuesax-alpha/vuesax-alpha-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/vuesax-alpha/vuesax-alpha-extension/issues"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.89.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vsce": "^2.15.0"
+  }
+}
