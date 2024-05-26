@@ -21,10 +21,10 @@
   "main": "./out/extension.js",
   "contributes": {},
   "scripts": {
-    "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
     "compile": "tsup src/extension.ts --dts --minify --external=vscode --outDir=out",
-    "watch": "npm run compile -- --watch"
+    "watch": "npm run compile -- --watch",
+    "release": "pnpm compile && vsce package --no-dependencies && vsce publish --no-dependencies"
   },
   "repository": {
     "type": "git",
