@@ -1,9 +1,13 @@
-# Change Log
+## [0.0.2](https://github.com/vuesax-alpha/vuesax-alpha) (2024-05-26)
 
-All notable changes to the "vuesax-alpha-extension" extension will be documented in this file.
+### Feature
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- button component `syntax hints` and `quick completion` for all components.
 
-## [Unreleased]
+- add compile and release scripts
 
-- Initial release
+## [0.0.3](https://github.com/vuesax-alpha/vuesax-alpha) (2024-05-27)
+
+### Chore
+
+- update readme.md
