@@ -8,7 +8,6 @@ export interface ComponentDescriptor {
 export const componentsMap: Record<string, ComponentDescriptor> = {
   button: {
     path: "",
-    attrs: ['type="primary"'],
   },
   "button-group": {
     path: "",

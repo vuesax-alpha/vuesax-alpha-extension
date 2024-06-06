@@ -11,3 +11,9 @@
 ### Chore
 
 - update readme.md
+
+## [0.0.4](https://github.com/vuesax-alpha/vuesax-alpha) (2024-06-6)
+
+### Chore
+
+- remove button attrs
