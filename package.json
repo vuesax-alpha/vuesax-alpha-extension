@@ -2,7 +2,7 @@
   "name": "vuesax-alpha-extension",
   "displayName": "vuesax-alpha-extension",
   "description": "a vscode extension of vuesax-alpha",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "vuesax-alpha",
   "icon": "src/assets/vuesax-alpha-logo.png",
   "engines": {

@@ -1,10 +1,1904 @@
 {
   "framework": "vue",
-  "version": "0.20-beta.75",
-  "name": "VUESAX-ALPHA",
+  "version": "0.20-beta.77",
+  "name": "vuesax-alpha",
   "contributions": {
     "html": {
       "tags": [
+        {
+          "name": "vs-alert",
+          "attributes": [
+            {
+              "name": "v-model",
+              "description": "Determine if the component is visible.",
+              "default": "true",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "v-model:hidden-content",
+              "description": "With this property you can hide the content of the alert. You can bind this with v-model",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Change the color of the component and some of its sub components.",
+              "default": "primary",
+              "value": {
+                "type": "primary, success, danger, warning, dark, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "type",
+              "description": "Change the style of all the alert.",
+              "default": "default",
+              "value": {
+                "type": "solid, border, shadow, gradient, relief",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "page",
+              "description": "Determine the page that is active (this property is linked to the slots=\"page-{n}\").",
+              "default": "null",
+              "value": {
+                "type": "Number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "progress",
+              "description": "Add a progress bar to the alert and the value is the percentage of width.",
+              "default": "null",
+              "value": {
+                "type": "0 - 100",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "closable",
+              "description": "Add a button to close the alert (it is necessary to use v-model).",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Add an icon to the alert.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "title",
+              "description": "Add a title to the alert.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "page-{n}",
+              "description": "Add the pages to the alert component if it is page one would be (slot=\"page-1\").",
+              "default": "null",
+              "value": {
+                "type": "(page-1 - page-{n})",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "footer",
+              "description": "Add a footer to the alert component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "icon",
+              "description": "Add an icon to the alert."
+            },
+            {
+              "name": "title",
+              "description": "Add a title to the alert."
+            },
+            {
+              "name": "page-{n}",
+              "description": "Add the pages to the alert component if it is page one would be (slot=\"page-1\")."
+            },
+            {
+              "name": "footer",
+              "description": "Add a footer to the alert component."
+            }
+          ]
+        },
+        {
+          "name": "vs-avatar",
+          "attributes": [
+            {
+              "name": "color",
+              "description": "color of the component.",
+              "default": "--vs-gray-2",
+              "value": {
+                "type": "Vuesax Colors, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "size",
+              "description": "size of the avatar component.",
+              "default": "44",
+              "value": {
+                "type": "Number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "badge",
+              "description": "Determine if the badge is active.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "badge-color",
+              "description": "Change the color of the badge inside the avatar.",
+              "default": "primary",
+              "value": {
+                "type": "Vuesax colors,RGB,HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shape",
+              "description": "Change the style of the avatar by circulating it.",
+              "default": "false",
+              "value": {
+                "type": "square, circle",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "writing",
+              "description": "Add an animation to the writing badge.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "history",
+              "description": "Add a border to the avatar.",
+              "default": "gray-2",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "history-gradient",
+              "description": "Change the color of the border to a gradient.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Add a loading animation to the avatar.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "max",
+              "description": "(vs-avatar-group) determine how many avatars are visible.",
+              "default": "null",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "float",
+              "description": "(vs-avatar-group) change the way the avatar is composed by placing one next to the other.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "pointer",
+              "description": "Determine if the avatar has a pointer cursor.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "text",
+              "description": "Add text within the avatar component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "badge",
+              "description": "Add to the badge everything that is inside the slot, commonly used for numbers and an icon.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icons",
+              "description": "Add a space to put icons next to the avatar.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "text",
+              "description": "Add text within the avatar component."
+            },
+            {
+              "name": "badge",
+              "description": "Add to the badge everything that is inside the slot, commonly used for numbers and an icon."
+            },
+            {
+              "name": "icons",
+              "description": "Add a space to put icons next to the avatar."
+            }
+          ]
+        },
+        {
+          "name": "vs-card",
+          "attributes": [
+            {
+              "name": "type",
+              "description": "Change the style of the letter and the position of the internals.",
+              "default": "null",
+              "value": {
+                "type": "1,2,3,4,5",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "text",
+              "description": "Add text to the card in the section determined by the card type.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "title",
+              "description": "Add the title to the card in the section determined by the type of card.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "buttons",
+              "description": "Add the buttons to the card in the section determined by the type of card.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "interactions",
+              "description": "Add the interactions to the card in the section determined by the card type.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "img",
+              "description": "Add the image or video to the card in the section determined by the type of card.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "text",
+              "description": "Add text to the card in the section determined by the card type."
+            },
+            {
+              "name": "title",
+              "description": "Add the title to the card in the section determined by the type of card."
+            },
+            {
+              "name": "buttons",
+              "description": "Add the buttons to the card in the section determined by the type of card."
+            },
+            {
+              "name": "interactions",
+              "description": "Add the interactions to the card in the section determined by the card type."
+            },
+            {
+              "name": "img",
+              "description": "Add the image or video to the card in the section determined by the type of card."
+            }
+          ]
+        },
+        {
+          "name": "vs-checkbox",
+          "attributes": [
+            {
+              "name": "v-model",
+              "description": "determine the value of the checkbox and data anchor.",
+              "default": "false",
+              "value": {
+                "type": "boolean, string, array",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Change the color of the component.",
+              "default": "false",
+              "value": {
+                "type": "vuesax colors, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "value",
+              "description": "Determine the value of the input when being checked.",
+              "default": "true",
+              "value": {
+                "type": "String, Object",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Add a loading animation and disable the input.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "line-through",
+              "description": "Add a line in the center of the label when checked.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "indeterminate",
+              "description": "Change the default checkbox icon to a line that represents undetermined data.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "label-before",
+              "description": "Change the position of the label.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "checked",
+              "description": "Determine if the component is initially in check (this changes the property computed in v-model to true).",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "checked-force",
+              "description": "Force checkbox state is checked",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "Checkbox Group",
+              "description": "It is used for multiple checkboxes which are bound in one group.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "id",
+              "description": "Checkbox id",
+              "default": "undefined",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "name",
+              "description": "Checkbox name",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Change the component icon.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "Add a label to the component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "icon",
+              "description": "Change the component icon."
+            },
+            {
+              "name": "default",
+              "description": "Add a label to the component."
+            }
+          ]
+        },
+        {
+          "name": "vs-dialog",
+          "attributes": [
+            {
+              "name": "v-model",
+              "description": "Determine if the dialogue is visible or hidden.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-center",
+              "description": "By default the header centers the elements, with this property the centering is eliminated.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "width",
+              "description": "Determine the width of the dialog.",
+              "default": "null",
+              "value": {
+                "type": "px",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Add a loading animation to the dialog.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-close",
+              "description": "Remove the close button from the dialog.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "scroll",
+              "description": "Makes the content a maximum high and gives the possibility to overflow the content add scroll.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "lock-scroll",
+              "description": "When the dialog is opened, the page scroll is deleted.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "auto-width",
+              "description": "It makes the dialog have an automatic width to its content.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-padding",
+              "description": "Eliminates the padding of the base elements of the dialog.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "full-screen",
+              "description": "Makes the dialog the size of the window.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "overlay-blur",
+              "description": "Makes all elements blur when the dialog opens.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shape",
+              "description": "Remove the border radius from the dialog.",
+              "default": "false",
+              "value": {
+                "type": "square",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "prevent-close",
+              "description": "It makes the dialog cannot be closed by clicking outside or by pressing the esc key.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "close",
+              "description": "triggers when the Dialog closes",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "slot default of Dialog",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "header",
+              "description": "slot header of Dialog",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "footer",
+              "description": "slot footer of Dialog",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "close",
+              "description": "triggers when the Dialog closes"
+            },
+            {
+              "name": "default",
+              "description": "slot default of Dialog"
+            },
+            {
+              "name": "header",
+              "description": "slot header of Dialog"
+            },
+            {
+              "name": "footer",
+              "description": "slot footer of Dialog"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "slot default of Dialog"
+            },
+            {
+              "name": "header",
+              "description": "slot header of Dialog"
+            },
+            {
+              "name": "footer",
+              "description": "slot footer of Dialog"
+            }
+          ]
+        },
+        {
+          "name": "vs-input",
+          "attributes": [
+            {
+              "name": "v-model",
+              "description": "binding value",
+              "default": "null",
+              "value": {
+                "type": "String, Number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "placeholder",
+              "description": "placeholder of Input",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "label",
+              "description": "a label above the component.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "label-float",
+              "description": "Add a placeholder converts to focus on a label.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Change component color.",
+              "default": "null",
+              "value": {
+                "type": "vuesax colors, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "state",
+              "description": "Change the background color of the component by changing its status.",
+              "default": "null",
+              "value": {
+                "type": "vuesax colors,RGB,HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "progress",
+              "description": "progress bar starting in red and ending in green.",
+              "default": "null",
+              "value": {
+                "type": "0 - 100",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Add a loading animation to the input.",
+              "default": "null",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "type",
+              "description": "Change the type of input (html values).",
+              "default": "null",
+              "value": {
+                "type": "html type",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "border",
+              "description": "Change the style of the component.",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shadow",
+              "description": "Change the style of the component.",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon-after",
+              "description": "suffix icon component",
+              "default": "false",
+              "value": {
+                "type": "Boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "show-password",
+              "description": "If the input is of the password type, it is modified to show the password.",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Add an icon to the input.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "message",
+              "description": "Add an informative text below the input.",
+              "default": "null",
+              "value": {
+                "type": "message-success, message-danger, message-warn",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "icon",
+              "description": "Add an icon to the input."
+            },
+            {
+              "name": "message",
+              "description": "Add an informative text below the input."
+            }
+          ]
+        },
+        {
+          "name": "vs-loading",
+          "attributes": [
+            {
+              "name": "type",
+              "description": "Change the animation of the loading.",
+              "default": "default",
+              "value": {
+                "type": "atom,ball,scale,waves,border,points,square,circles,corners,default,gradient,rectangle,square-rotate",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Change the color of the loading animation.",
+              "default": "primary",
+              "value": {
+                "type": "All colors of vuesax (RGB y HEX)",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "background",
+              "description": "Change the background color of the loading.",
+              "default": "'#fff'",
+              "value": {
+                "type": "All colors of vuesax (RGB y HEX)",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "text",
+              "description": "Add a text below the loading animation.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "percent",
+              "description": "Add a percentage text inside the loading.",
+              "default": "null",
+              "value": {
+                "type": "0 - 100 (%)",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "progress",
+              "description": "Add a progress bar to the loading and the progress would be the value.",
+              "default": "null",
+              "value": {
+                "type": "0 - 100",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "target",
+              "description": "Determine the parent of the loading where it will be instantiated.",
+              "default": "null",
+              "value": {
+                "type": "'String: Element Selector, HTMLElement: Selector element, Ref HTMLElement'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "opacity",
+              "description": "Change the opacity of the background.",
+              "default": "'0.6'",
+              "value": {
+                "type": "0 - 1",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "scale",
+              "description": "Change the size of the loading animation.",
+              "default": "'1'",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "setPercent",
+              "description": "Change the value of the percent after instantiating the loading.",
+              "default": "null",
+              "value": {
+                "type": "'(percent: Number) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "setProgress",
+              "description": "Change the value of the progress after instantiating the loading.",
+              "default": "null",
+              "value": {
+                "type": "'(progress: Number) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "setText",
+              "description": "Change the value of the text property after instantiating the loading.",
+              "default": "null",
+              "value": {
+                "type": "'(text: String) => void'",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": []
+        },
+        {
+          "name": "vs-navbar",
+          "attributes": [
+            {
+              "name": "fixed",
+              "description": "Defines if the component is fixed on the screen.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shadow",
+              "description": "Add a shadow to the component.",
+              "default": "primary",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shadow-scroll",
+              "description": "Add functionality to add shadow to component when scrollTop is more than 0.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "hide-scroll",
+              "description": "Add the functionality to hide and show the component based on whether the scroll is lowered or raised.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "textWhite",
+              "description": "Change the text color of items to white.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "square",
+              "description": "Change the border radius to 0 by making the component square.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "padding-scroll",
+              "description": "Determines if the component has padding and the user scrolling is removed making an effect.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-line",
+              "description": "Delete the active line in the component.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "left-collapsed",
+              "description": "Add the functionality that when the elements of this slot cannot be correctly they are visually removed.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "center-collapsed",
+              "description": "Add the functionality that when the elements of this slot cannot be correctly they are visually removed.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "right-collapsed",
+              "description": "Add the functionality that when the elements of this slot cannot be correctly they are visually removed.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "target-scroll",
+              "description": "Determines the element to which the scroll event will be requested.",
+              "default": "document",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "item:active",
+              "description": "Determines if the component is in active status.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "item:to",
+              "description": "Use vue-router to generate a new view based on the supplied string.",
+              "default": "false",
+              "value": {
+                "type": "vue-router RouteLocationRaw",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "item:to",
+              "description": "Use vue-router to generate a new view based on the supplied string.",
+              "default": "false",
+              "value": {
+                "type": "vue-router RouteLocationRaw",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "item:link",
+              "description": "Use to navigate the site",
+              "default": "false",
+              "value": {
+                "type": "NavLink",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "Add the elements in the center of the component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "left",
+              "description": "Add the elements on the left side of the component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "right",
+              "description": "Add the elements on the right side of the component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Add the elements in the center of the component."
+            },
+            {
+              "name": "left",
+              "description": "Add the elements on the left side of the component."
+            },
+            {
+              "name": "right",
+              "description": "Add the elements on the right side of the component."
+            }
+          ]
+        },
+        {
+          "name": "vs-notification",
+          "attributes": [
+            {
+              "name": "title",
+              "description": "Add a title to the notification.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "content",
+              "description": "Add the content to the notification.",
+              "default": "null",
+              "value": {
+                "type": "String, VNode",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "position",
+              "description": "Change the position of the component.",
+              "default": "bottom-right",
+              "value": {
+                "type": "bottom-right,top-right,top-center,top-left,bottom-left,bottom-center",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Change the base color of the entire component.",
+              "default": "null",
+              "value": {
+                "type": "vuesax colors, rgb, hex",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "border",
+              "description": "Add a color border to the notification.",
+              "default": "null",
+              "value": {
+                "type": "vuesax colors, rgb, hex",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Add an icon to the notification.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "duration",
+              "description": "Determine the time until the notification is hidden (none determines not to hide).",
+              "default": "4500 (4.5s)",
+              "value": {
+                "type": "Number, none",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "onClick",
+              "description": "function that is executed by clicking on the notification.",
+              "default": "null",
+              "value": {
+                "type": "function",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "buttonClose",
+              "description": "Determine if the notification has the close button.",
+              "default": "true",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "flat",
+              "description": "Change the notification style to flat.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "onDestroy",
+              "description": "Function that is executed when the notification is destroyed.",
+              "default": "null",
+              "value": {
+                "type": "Function",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "sticky",
+              "description": "Change the position of the notification attached to the nearest corner.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "square",
+              "description": "Determine if the notification is square and remove the border-radius.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "width",
+              "description": "Determine the width of the notification.",
+              "default": "340px",
+              "value": {
+                "type": "100%, auto",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Determine if the notification has a loading animation.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "progressAuto",
+              "description": "Add a progress bar to the notification.",
+              "default": "null",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "notPadding",
+              "description": "Remove padding from notification.",
+              "default": "20px",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "clickClose",
+              "description": "Determine if clicking on the notification closes.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "content",
+              "description": "Change the content of the notification to the one provided as a value (something similar to a vue slot).",
+              "default": "null",
+              "value": {
+                "type": "Vnode,String,ComponentPublicInstance",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "instance.close()",
+              "description": "Close the notificationn.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "custom-class",
+              "description": "Add a custom class to the notification.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": []
+        },
+        {
+          "name": "vs-pagination",
+          "attributes": [
+            {
+              "name": "v-model:current-page",
+              "description": "Determine the page where the user is.",
+              "default": "1",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "total",
+              "description": "It is the total number of pages that the component has.",
+              "default": "null",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Change the base color of the component.",
+              "default": "primary",
+              "value": {
+                "type": "Vuesax colors, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Determine if the entire component is in the disabled state.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shape",
+              "description": "Change the style of the buttons making them completely round or totally square.",
+              "default": "null",
+              "value": {
+                "type": "circle, square",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "buttons-dotted",
+              "description": "Makes the buttons not have the internal number and changes its size.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "disabled-items",
+              "description": "Determine which items are in the disabled state.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading-items",
+              "description": "Determine which items are in the charging state.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-margin",
+              "description": "Change the margin between the items causing them to be fully glued and the radius is removed making them square.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "progress",
+              "description": "Add a progress bar to the component determined by the current page and the total of pages.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "infinite",
+              "description": "Determine if the pagination is infinite.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "v-model:page-size",
+              "description": "item count of each page.",
+              "default": "10",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default-page-size",
+              "description": "default initial value of page size",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "page-count",
+              "description": "total page count. Set either total or page-count and pages will be displayed; if you need page-sizes, total is required",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "pager-count",
+              "description": "number of pagers. Pagination collapses when the total page count exceeds this value",
+              "default": "7",
+              "value": {
+                "type": "5, 7, 9, 11, 13, 15, 17, 19, 21",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default-current-page",
+              "description": "default initial value of current-page",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "layout",
+              "description": "layout of Pagination, an array or elements separated with a comma",
+              "default": "[prev, pager, next, jumper, ->, total, slot, sizes]",
+              "value": {
+                "type": "prev, pager, next, jumper, ->, total, slot, sizes",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "page-sizes",
+              "description": "options of item count per page",
+              "default": "[10, 20, 30, 40, 50, 100]",
+              "value": {
+                "type": "number[]",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "hide-on-single-page",
+              "description": "options of item count per page",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "prev-text",
+              "description": "text for the prev button",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "prev-icon",
+              "description": "icon for the prev button, higher priority of prev-text",
+              "default": "ChevronLeft",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "next-text",
+              "description": "text for the next button",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "next-icon",
+              "description": "icon for the next button, higher priority of next-text",
+              "default": "ChevronRight",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "Custom content. To use this, need to declare slot in layout",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Custom content. To use this, need to declare slot in layout"
+            }
+          ]
+        },
+        {
+          "name": "vs-popper",
+          "attributes": [],
+          "events": [],
+          "slots": [
+            {
+              "name": "default",
+              "description": "popper triggering & reference element"
+            },
+            {
+              "name": "content",
+              "description": "customize content"
+            }
+          ]
+        },
+        {
+          "name": "vs-radio",
+          "attributes": [
+            {
+              "name": "color",
+              "description": "Change the color of the radio.",
+              "default": "primary",
+              "value": {
+                "type": "Vuesax Colors, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Determine if the component is in the disabled state.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Determine if the component has a loading animation and is disabled.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "val",
+              "description": "Determine the value of the radio input.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "Add a label to the component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Add an icon inside the radio.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Add a label to the component."
+            },
+            {
+              "name": "icon",
+              "description": "Add an icon inside the radio."
+            }
+          ]
+        },
+        {
+          "name": "vs-rate",
+          "attributes": [
+            {
+              "name": "model-value/v-model",
+              "description": "binding value.",
+              "default": "0",
+              "value": {
+                "type": "Number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "id",
+              "description": "native <code>id</code> attribute.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "low-threshold",
+              "description": "threshold value between low and medium level. The value itself will be included in low level.",
+              "default": "2",
+              "value": {
+                "type": "Number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "high-threshold",
+              "description": "threshold value between medium and high level. The value itself will be included in high level.",
+              "default": "4",
+              "value": {
+                "type": "Number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "max",
+              "description": "max rating score.",
+              "default": "5",
+              "value": {
+                "type": "Number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "colors",
+              "description": "colors for icons. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding color",
+              "default": "['#f7ba2a', '#f7ba2a', '#f7ba2a']",
+              "value": {
+                "type": "'string[] , Record:< number| string>'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "void-color",
+              "description": "component of unselected icons.",
+              "default": "'#c6d1de'",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "disabled-void-color",
+              "description": "color of unselected read-only icons.",
+              "default": "'#eff2f7'",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icons",
+              "description": "icon components. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding icon component.",
+              "default": "'[StarFilled, StarFilled, StarFilled]'",
+              "value": {
+                "type": "'string[],component[],Record< number，string | Component>'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "void-icon",
+              "description": "component of unselected icons.",
+              "default": "'Star'",
+              "value": {
+                "type": "'string,Component'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "disabled-void-icon",
+              "description": "component of unselected read-only icons.",
+              "default": "'StarFilled'",
+              "value": {
+                "type": "'string,Component'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "whether Rate is read-only.",
+              "default": "'false'",
+              "value": {
+                "type": "'true,false'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "allow-half",
+              "description": "whether picking half start is allowed.",
+              "default": "'false'",
+              "value": {
+                "type": "'true,false'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "show-text",
+              "description": "whether to display texts.",
+              "default": "'false'",
+              "value": {
+                "type": "'true,false'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "show-score",
+              "description": "whether to display current score. show-score and show-text cannot be true at the same time.",
+              "default": "'false'",
+              "value": {
+                "type": "'true,false'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "text-color",
+              "description": "color of texts.",
+              "default": "''",
+              "value": {
+                "type": "'String'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "texts",
+              "description": "text array",
+              "default": "'[Extremely bad, Disappointed, Fair, Satisfied, Surprise]'",
+              "value": {
+                "type": "'String[]'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "score-template",
+              "description": "score template.",
+              "default": "''",
+              "value": {
+                "type": "'String'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "size",
+              "description": "size of Rate.",
+              "default": "'default'",
+              "value": {
+                "type": "'large,default, small'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "clearable",
+              "description": "whether value can be reset to <code>0</code>.",
+              "default": "'false'",
+              "value": {
+                "type": "'true,false'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "label",
+              "description": "same as <code>aria-label</code> in Rate",
+              "default": "''",
+              "value": {
+                "type": "'String'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "change",
+              "description": "Triggers when rate value is changed.",
+              "default": "null",
+              "value": {
+                "type": "'(value: number) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "setCurrentValue",
+              "description": "set current value.",
+              "default": "null",
+              "value": {
+                "type": "'(value: number) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "resetCurrentValue",
+              "description": "reset current value.",
+              "default": "null",
+              "value": {
+                "type": "'(value: number) => void'",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "description": "Triggers when rate value is changed."
+            },
+            {
+              "name": "setCurrentValue",
+              "description": "set current value."
+            },
+            {
+              "name": "resetCurrentValue",
+              "description": "reset current value."
+            }
+          ],
+          "slots": []
+        },
         {
           "name": "vs-button",
           "attributes": [
@@ -13,16 +1907,16 @@
               "description": "Change the color of the component and some of its sub components.",
               "default": "primary",
               "value": {
-                "type": "string",
+                "type": "primary, success, danger, warning, dark, RGB, HEX",
                 "kind": "expression"
               }
             },
             {
-              "name": "type",
+              "name": "style button",
               "description": "Change the style of the component and its states.",
-              "default": "''",
+              "default": "null",
               "value": {
-                "type": "string",
+                "type": "flat, border, gradient, transparent, dashed, shadow, relief, floating",
                 "kind": "expression"
               }
             },
@@ -31,7 +1925,7 @@
               "description": "Determine if the component is active and change its style to that state.",
               "default": "false",
               "value": {
-                "type": "Boolean",
+                "type": "true, false",
                 "kind": "expression"
               }
             },
@@ -40,16 +1934,25 @@
               "description": "Determine if the component has the upload status active by changing the style and adding the animation.",
               "default": "false",
               "value": {
-                "type": "Boolean",
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "to",
+              "description": "Add the functionality of vue-router to the button, clicking it will redirect to the last route.",
+              "default": "false",
+              "value": {
+                "type": "url - vue-router",
                 "kind": "expression"
               }
             },
             {
               "name": "href",
               "description": "Add an href of an external link to add the functionality by clicking on the component.",
-              "default": "''",
+              "default": "false",
               "value": {
-                "type": "string",
+                "type": "href - link",
                 "kind": "expression"
               }
             },
@@ -58,7 +1961,7 @@
               "description": "as in an html element `a` determines whether a new window is opened or the current one is replaced.",
               "default": "false",
               "value": {
-                "type": "Boolean",
+                "type": "true, false",
                 "kind": "expression"
               }
             },
@@ -67,7 +1970,7 @@
               "description": "Determine if the component contains only one icon, by adding this property the component has an equal width and height.",
               "default": "false",
               "value": {
-                "type": "Boolean",
+                "type": "true, false",
                 "kind": "expression"
               }
             },
@@ -76,7 +1979,434 @@
               "description": "Change the border radius to give a circle style.",
               "default": "false",
               "value": {
-                "type": "Boolean",
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "square",
+              "description": "Change the border radius to give a rectangle style.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": []
+        },
+        {
+          "name": "vs-scrollbar",
+          "attributes": [
+            {
+              "name": "height",
+              "description": "height of scrollbar",
+              "default": "",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "max-height",
+              "description": "max height of scrollbar",
+              "default": "null",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "native",
+              "description": "whether to use the native scrollbar",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "wrap-style",
+              "description": "style of wrap container",
+              "default": "null",
+              "value": {
+                "type": "CSSProperties, CSSProperties[], string[]",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "wrap-class",
+              "description": "class of wrap container",
+              "default": "null",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "view-style",
+              "description": "style of view container",
+              "default": "null",
+              "value": {
+                "type": "CSSProperties, CSSProperties[], string[]",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "view-class",
+              "description": "class of view container",
+              "default": "null",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "noresize",
+              "description": "do not respond to container size changes, if the container size does not change, it is better to set it to optimize performance",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "tag",
+              "description": "element tag of the view",
+              "default": "div",
+              "value": {
+                "type": "HTML Tag",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "always",
+              "description": "always show scrollbar",
+              "default": "true",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "min-size",
+              "description": "minimum size of scrollbar",
+              "default": "20",
+              "value": {
+                "type": "",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "thickness",
+              "description": "thumb width",
+              "default": "6",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "scroll",
+              "description": "triggers when scrolling, return distance of scrolling",
+              "default": "null",
+              "value": {
+                "type": "'({ scrollLeft: number, scrollTop: number }) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "customize default content",
+              "default": "null",
+              "value": {
+                "type": "",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "handleScroll",
+              "description": "handle scroll event",
+              "default": "null",
+              "value": {
+                "type": "'() => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "scrollTo",
+              "description": "scrolls to a particular set of coordinates",
+              "default": "null",
+              "value": {
+                "type": "'(options: ScrollToOptions | number, yCoord?: number) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "setScrollTop",
+              "description": "Set distance to scroll top",
+              "default": "null",
+              "value": {
+                "type": "'(scrollTop: number) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "setScrollLeft",
+              "description": "Set distance to scroll left",
+              "default": "null",
+              "value": {
+                "type": "'(scrollLeft: number) => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "update",
+              "description": "update scrollbar state manually",
+              "default": "null",
+              "value": {
+                "type": "'() => void'",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "wrapRef",
+              "description": "scrollbar wrap ref",
+              "default": "null",
+              "value": {
+                "type": "'Ref HTMLElement'",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "scroll",
+              "description": "triggers when scrolling, return distance of scrolling"
+            },
+            {
+              "name": "default",
+              "description": "customize default content"
+            },
+            {
+              "name": "handleScroll",
+              "description": "handle scroll event"
+            },
+            {
+              "name": "scrollTo",
+              "description": "scrolls to a particular set of coordinates"
+            },
+            {
+              "name": "setScrollTop",
+              "description": "Set distance to scroll top"
+            },
+            {
+              "name": "setScrollLeft",
+              "description": "Set distance to scroll left"
+            },
+            {
+              "name": "update",
+              "description": "update scrollbar state manually"
+            },
+            {
+              "name": "wrapRef",
+              "description": "scrollbar wrap ref"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "customize default content"
+            },
+            {
+              "name": "handleScroll",
+              "description": "handle scroll event"
+            },
+            {
+              "name": "scrollTo",
+              "description": "scrolls to a particular set of coordinates"
+            },
+            {
+              "name": "setScrollTop",
+              "description": "Set distance to scroll top"
+            },
+            {
+              "name": "setScrollLeft",
+              "description": "Set distance to scroll left"
+            },
+            {
+              "name": "update",
+              "description": "update scrollbar state manually"
+            },
+            {
+              "name": "wrapRef",
+              "description": "scrollbar wrap ref"
+            }
+          ]
+        },
+        {
+          "name": "vs-select",
+          "attributes": [
+            {
+              "name": "color",
+              "description": "Change the color of the component.",
+              "default": "primary",
+              "value": {
+                "type": "Main colors of vuesax, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Determine if the component is in the loading state and add an animation.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "flip",
+              "description": "Changes the placement of the options element to keep it in view.",
+              "default": "true",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "teleported",
+              "description": "whether select dropdown is teleported to the body",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "placeholder",
+              "description": "Add a placeholder to the component.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "label",
+              "description": "Add a label to the composite select.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "label-placeholder",
+              "description": "Add a placeholder that when in focus or with value becomes a label.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "filter",
+              "description": "Add the functionality to filter the select options.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default-first-option",
+              "description": "select first matching option on enter key. Use with `filter`",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "allow-create",
+              "description": "Whether creating new items is allowed. To use this, `filter` must be true",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "multiple",
+              "description": "Add the functionality of being able to select several options from a select.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "multiple-limit",
+              "description": "Maximum number of options user can select when `multiple` is `true`. No limit when set to 0",
+              "default": "0",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "state",
+              "description": "Change the state of the component to the color provided.",
+              "default": "false",
+              "value": {
+                "type": "Vuesax main colors",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "disabled",
+              "description": "Determine if the component is in the disabled state.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "collapse-chips",
+              "description": "Whether to collapse tags to a text when multiple selecting",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "max-collapse-chips",
+              "description": "The max tags number to be shown. To use this, collapse-chips must be `true`",
+              "default": "1",
+              "value": {
+                "type": "number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "option-group:label",
+              "description": "Set label for select group (required)",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "message-{color}",
+              "description": "Add a message below the select.",
+              "default": "null",
+              "value": {
+                "type": "warn, danger, success",
                 "kind": "expression"
               }
             }
@@ -84,12 +2414,607 @@
           "events": [],
           "slots": [
             {
-              "name": "animate",
-              "description": "Slot To add the element that will be displayed in the animation."
+              "name": "message-{color}",
+              "description": "Add a message below the select."
+            }
+          ]
+        },
+        {
+          "name": "vs-sidebar",
+          "attributes": [
+            {
+              "name": "open/v-model:open",
+              "description": "Determines if the component is visible.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "v-model",
+              "description": "Determines the item that is in active status.",
+              "default": "null",
+              "value": {
+                "type": "id",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "absolute",
+              "description": "Determine if the component is of absolute position.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "reduce",
+              "description": "Determine if the component is in a reduced state with a width of 50px.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "hover-expand",
+              "description": "Adds the functionality to expand when the user enters inside the sidebar and vice versa.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shape",
+              "description": "Determine if the component has no border radius",
+              "default": "false",
+              "value": {
+                "type": "square",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-shadow",
+              "description": "Remove the shadow from the sidebar",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "background",
+              "description": "Change the background color of the sidebar",
+              "default": "false",
+              "value": {
+                "type": "Vuesax Colors, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "text-white",
+              "description": "Change the text color to white",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-line-active",
+              "description": "Remove the active line from items",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-sidebar-item:to",
+              "description": "Generate a new vue-router route",
+              "default": "null",
+              "value": {
+                "type": "url",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-sidebar-item:href",
+              "description": "Generate a new route",
+              "default": "null",
+              "value": {
+                "type": "url",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "right",
+              "description": "Determines if the component is positioned to the right",
+              "default": "null",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "logo",
+              "description": "Add elements on top of the entire sidebar.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "footer",
+              "description": "Add the elements at the bottom of the sidebar.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "header",
+              "description": "Add the elements below the logo and above the items.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-sidebar-item#icon",
+              "description": "It is the space to add the icon or a representative letter.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "logo",
+              "description": "Add elements on top of the entire sidebar."
+            },
+            {
+              "name": "footer",
+              "description": "Add the elements at the bottom of the sidebar."
+            },
+            {
+              "name": "header",
+              "description": "Add the elements below the logo and above the items."
+            },
+            {
+              "name": "vs-sidebar-item#icon",
+              "description": "It is the space to add the icon or a representative letter."
+            }
+          ]
+        },
+        {
+          "name": "vs-switch",
+          "attributes": [
+            {
+              "name": "v-model",
+              "description": "Determine the value of the component and if it is an array add or remove the value.",
+              "default": "null",
+              "value": {
+                "type": "Boolean, Array",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Change the color of the component when it is in active state.",
+              "default": "primary",
+              "value": {
+                "type": "Vuesax main colors, RGB y HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Add a loading animation to the component.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "indeterminate",
+              "description": "Determine if the component is in an undetermined state (being in this state is disabled).",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "Square",
+              "description": "Change the style of the component from circular to square.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "icon",
+              "description": "Change the style of the circle by making it transparent (used when adding the slot = \"circle\").",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "notValue",
+              "description": "Determine the return value of the component when inactive.",
+              "default": "null",
+              "value": {
+                "type": "String",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "Add text within the component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "on",
+              "description": "Add text within the component when it is in active state.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "off",
+              "description": "Add text within the component when it is in idle state.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "circle",
+              "description": "Add an icon to the circle within the component.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Add text within the component."
+            },
+            {
+              "name": "on",
+              "description": "Add text within the component when it is in active state."
+            },
+            {
+              "name": "off",
+              "description": "Add text within the component when it is in idle state."
+            },
+            {
+              "name": "circle",
+              "description": "Add an icon to the circle within the component."
+            }
+          ]
+        },
+        {
+          "name": "vs-table",
+          "attributes": [
+            {
+              "name": "v-model",
+              "description": "Determines the table values ​​that are selected.",
+              "default": "null",
+              "value": {
+                "type": "Object, Array",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "striped",
+              "description": "Add stripes to the gray tr.",
+              "default": "null",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-tr:data",
+              "description": "when the functionality of selected is needed this property is needed since it is the object that is passed to the v-model.",
+              "default": "null",
+              "value": {
+                "type": "Object",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-tr:is-selected",
+              "description": "Determines if the component is in the selected state, for optimize perf",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-td:edit",
+              "description": "Determine if the element is editable by adding underline and the pointer cursor.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-th:sort",
+              "description": "Add the sort arrows to the corresponding th.",
+              "default": "false",
+              "value": {
+                "type": "true, false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-tr:color",
+              "description": "Change the color of the tr.",
+              "default": "null",
+              "value": {
+                "type": "color, vuesax colors",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "header",
+              "description": "Space to put an element at the top of the table such as the input search.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "thead",
+              "description": "Space representing thead element of the table where the `vs-th` components will be placed.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "tbody",
+              "description": "Represents the tbody element in the table and here we will put the `vs-tr` components.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "vs-tr:#expand",
+              "description": "Represents the interior of the tr when it is expanded.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "notFound",
+              "description": "Change the item to display when there are no items in the table.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "header",
+              "description": "Space to put an element at the top of the table such as the input search."
+            },
+            {
+              "name": "thead",
+              "description": "Space representing thead element of the table where the `vs-th` components will be placed."
+            },
+            {
+              "name": "tbody",
+              "description": "Represents the tbody element in the table and here we will put the `vs-tr` components."
+            },
+            {
+              "name": "vs-tr:#expand",
+              "description": "Represents the interior of the tr when it is expanded."
+            },
+            {
+              "name": "notFound",
+              "description": "Change the item to display when there are no items in the table."
+            }
+          ]
+        },
+        {
+          "name": "vs-time-select",
+          "attributes": [
+            {
+              "name": "v-model / model-value",
+              "description": "binding time value",
+              "default": "false",
+              "value": {
+                "type": "",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": []
+        },
+        {
+          "name": "vs-tooltip",
+          "attributes": [
+            {
+              "name": "v-model",
+              "description": "Determination if the component is active (visible).",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "color",
+              "description": "color of the tooltip.",
+              "default": "text",
+              "value": {
+                "type": "Vuesax colors, RGB, HEX",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "left, right, bottom",
+              "description": "position of the tooltip.",
+              "default": "top",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "border",
+              "description": "Change the style of the tooltip by adding a border.",
+              "default": "primary",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "border-thick",
+              "description": "Change the style of the tooltip by adding a thick border only at the arrow position.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "square",
+              "description": "Determine if the tooltip is rectangular without border-radius.",
+              "default": "false",
+              "value": {
+                "type": "trie,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "circle",
+              "description": "Change the border radius to 20px so that if it is a single line of text the corners are circular.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "shadow",
+              "description": "Change the style of the tooltip by adding a shadow and changing the background.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-arrow",
+              "description": "Remove the arrow from the tooltip.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "not-hover",
+              "description": "The default tooltip is generated by doing hover on the parent element, that functionality is removed and no longer appears or disappears when doing hover.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "interactivity",
+              "description": "Determine if the tooltip is interactive and makes it possible to click without automatically hiding.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "loading",
+              "description": "Determine if the tooltip has a loading style and animation.",
+              "default": "false",
+              "value": {
+                "type": "true,false",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "default",
+              "description": "Add the trigger element of the tooltip.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "content",
+              "description": "It is the content that will go inside the tooltip.",
+              "default": "null",
+              "value": {
+                "type": "null",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Add the trigger element of the tooltip."
+            },
+            {
+              "name": "content",
+              "description": "It is the content that will go inside the tooltip."
             }
           ]
         }
-      ]
+      ],
+      "types-syntax": "typescript"
     }
   }
 }
