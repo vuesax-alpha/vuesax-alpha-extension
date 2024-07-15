@@ -2,7 +2,7 @@
   "name": "vuesax-alpha-extension",
   "displayName": "vuesax-alpha-extension",
   "description": "a vscode extension of vuesax-alpha",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "publisher": "vuesax-alpha",
   "icon": "src/assets/vuesax-alpha-logo.png",
   "engines": {
@@ -25,7 +25,9 @@
     "lint": "eslint src --ext ts",
     "compile": "tsup src/extension.ts  --minify --external=vscode --publicDir src/assets  --outDir=out",
     "watch": "npm run compile -- --watch",
-    "release": "pnpm compile && vsce package --no-dependencies && vsce publish --no-dependencies"
+    "release": "pnpm compile && vsce package --no-dependencies && vsce publish --no-dependencies",
+    "changeset": "changeset",
+    "update-changelog": "changeset version"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,7 @@
     "url": "https://github.com/vuesax-alpha/vuesax-alpha-extension/issues"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.7",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
     "@types/vscode": "^1.89.0",
@@ -42,9 +45,10 @@
     "@typescript-eslint/parser": "^7.7.1",
     "@vscode/test-cli": "^0.0.9",
     "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^2.30.0",
     "eslint": "^8.57.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vsce": "^2.15.0"
+    "vuesax-alpha": "0.2.0-beta.78"
   }
 }

@@ -1,16 +1,16 @@
-## [0.0.2](https://github.com/vuesax-alpha/vuesax-alpha-extension) (2024-05-26)
+## 0.1.0
 
-### Feature
+### Minor Changes
 
-- button component `syntax hints` and `quick completion` for all components.
+- use vuesax-alpha/web-types.en-us.json replace local types file
 
-- add compile and release scripts
+- update vsce version
 
-## [0.0.3](https://github.com/vuesax-alpha/vuesax-alpha-extension) (2024-05-27)
+## [0.0.5](https://github.com/vuesax-alpha/vuesax-alpha-extension) (2024-06-16)
 
 ### Chore
 
-- update readme.md
+- update en-us.json
 
 ## [0.0.4](https://github.com/vuesax-alpha/vuesax-alpha-extension) (2024-06-6)
 
@@ -18,8 +18,16 @@
 
 - remove button attrs
 
-## [0.0.5](https://github.com/vuesax-alpha/vuesax-alpha-extension) (2024-06-16)
+## [0.0.3](https://github.com/vuesax-alpha/vuesax-alpha-extension) (2024-05-27)
 
 ### Chore
 
-- update en-us.json
+- update readme.md
+
+## [0.0.2](https://github.com/vuesax-alpha/vuesax-alpha-extension) (2024-05-26)
+
+### Feature
+
+- button component `syntax hints` and `quick completion` for all components.
+
+- add compile and release scripts

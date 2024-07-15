@@ -1,4 +1,4 @@
-import enWebTypes from "./en-us.json";
+import enWebTypes from "vuesax-alpha/web-types.en-US.json";
 import { HtmlTag } from "./webType";
 
 export function getWebTypesTags(): HtmlTag[] {
